@@ -1,13 +1,11 @@
-.border {
-    border: 2px solid red;
-}
-
 :root{
     --red: red;
     --primary:#5800f9;
     --white: white;
     --border-radius: 12px;
     --border-radius-btn: 20px;
+    --celeste: #ECF4F9;
+      
 
     --max-width: 1400px;
     --font-weight: 700;
@@ -27,26 +25,20 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
 
 }
 
 body{
     background: #ECF4F9;
-    /* background: red; */
-
-
+    font-family: 'Montserrat', sans-serif;
 }
 
 section {
     width: min(100%, var(--max-width));
     margin: auto;
-
-
 }
 main {
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, .1);
-    
 }
 
 .vistaProducto {
@@ -169,8 +161,8 @@ main {
 
     .image__gallery {
         margin: auto;
-        width: 450px;
-        height: 500px;
+        width: 50%;
+        height: 100%;
     }
 
     .gallery__img {
@@ -184,7 +176,7 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: center;
-
+        align-items: center;
     }
 
     .preventa__precio {
@@ -565,26 +557,8 @@ ul{
 
 
 
-  :root{
-    --red: red;
-    --primary:#5800f9;
-    --white: white;
-    --celeste: #ECF4F9;
-    --border-radius: 12px;
-    --border-radius-btn: 20px;
-  
-    --max-width: 1400px;
-    --font-weight: 700;
-    --font-size-title: 20px;
-    --font-size-name: 18px;
-    --size-precioEspecial: 30px;
-  }
-  
-  *, ::after, ::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+
+
   
     .container {
       line-height: 2;
@@ -635,3 +609,79 @@ ul{
   
   
   
+    /* PRECIO */
+
+.shoppingCart__precio {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 10px;
+    flex-direction: column;
+}
+
+
+
+.total {
+    display: flex;
+    justify-content: space-around;
+}
+
+.preventa__precio {
+    line-height: 1.5;
+}
+
+
+.--red{
+    color: var(--red);
+    font-weight: var(--font-weight);
+
+}
+.precio__title {
+    font-size: var(---font-size-title);
+}
+
+.precio__normal {
+    font-weight: var(--font-weight);
+    color: #A7A7A7;
+    text-decoration: line-through;
+    font-style: italic;
+    font-size: var(--size-precioNormal)
+}
+
+.precio__especial {
+    font-size: var(--size-precioEspecial);
+}
+.total {
+    margin-top: 20px;
+    display: flex;
+}
+.precio__total,.precio__name {
+    font-weight: var(--font-weight);
+}
+
+
+.input {
+    text-align: center;
+    font-weight: var(--font-weight);
+    width: 50px;
+    height: 40px;
+    margin: 5px;
+    border: 1px solid var(--red);
+    border-radius: var(--border-radius)
+
+}
+
+.btnIcon {
+    cursor: pointer;
+    background: var(--red);
+    padding: 10px 20px;
+    border-radius: 4px;
+    color: var(--white);
+    border: none;
+}
+
+.shoppingCart__actions {
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+    margin-top: 1rem;
+}

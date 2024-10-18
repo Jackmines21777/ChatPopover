@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="index.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-    <title>Nube-ChatPopOver</title>
+    <title>Local-ChatPopover</title>
 
     <script >
         document.addEventListener("DOMContentLoaded", () => {
@@ -18,49 +18,49 @@
     </script>
 
 
-<script type="module">
-    document.addEventListener('mouseup', function (e) {
-    const selection = window.getSelection();
-    const selectedText = selection.toString().trim();
-  
-    if (selectedText) {
-      const range = selection.getRangeAt(0);
-      const rect = range.getBoundingClientRect();
-      const popover = document.getElementById('popover');
-      const popoverText = document.getElementById('popover__text');
-      const popoverCopy = document.getElementById('popover__copy');
-      const popoverChrome = document.getElementById('popover__chrome');
-      const popoverChat = document.getElementById('popover__chat');
-      const searchInput = document.getElementById('search-input');
-  
-      popoverText.textContent = selectedText;
-      popover.style.left = `${rect.left + window.scrollX}px`;
-      popover.style.top = `${rect.top + window.scrollY - popover.offsetHeight}px`;
-      popover.style.display = 'block';
-  
-      popoverCopy.onclick = function () {
-        navigator.clipboard.writeText(selectedText).then(() => {
-          alert('Copiado');
-        });
-      };
-  
-      popoverChrome.onclick = function () {
-        searchInput.value = selectedText;
-        const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(selectedText)}`;
-        window.open(searchUrl, '_blank');
-        console.log(selectedText, searchUrl);
-      };
+    <script type="module">
+        document.addEventListener('mouseup', function (e) {
+        const selection = window.getSelection();
+        const selectedText = selection.toString().trim();
+    
+        if (selectedText) {
+        const range = selection.getRangeAt(0);
+        const rect = range.getBoundingClientRect();
+        const popover = document.getElementById('popover');
+        const popoverText = document.getElementById('popover__text');
+        const popoverCopy = document.getElementById('popover__copy');
+        const popoverChrome = document.getElementById('popover__chrome');
+        const popoverChat = document.getElementById('popover__chat');
+        const searchInput = document.getElementById('search-input');
+    
+        popoverText.textContent = selectedText;
+        popover.style.left = `${rect.left + window.scrollX}px`;
+        popover.style.top = `${rect.top + window.scrollY - popover.offsetHeight}px`;
+        popover.style.display = 'block';
+    
+        popoverCopy.onclick = function () {
+            navigator.clipboard.writeText(selectedText).then(() => {
+            alert('Copiado');
+            });
+        };
+    
+        popoverChrome.onclick = function () {
+            searchInput.value = selectedText;
+            const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(selectedText)}`;
+            window.open(searchUrl, '_blank');
+            console.log(selectedText, searchUrl);
+        };
 
-      popoverChat.onclick = function () {
-        searchInput.value = selectedText;
-      };
+        popoverChat.onclick = function () {
+            searchInput.value = selectedText;
+        };
 
 
-    } else {
-      document.getElementById('popover').style.display = 'none';
-    }
-  });
-</script>
+        } else {
+        document.getElementById('popover').style.display = 'none';
+        }
+    });
+    </script>
 
 
     <!--* El script de tipo modulo me permite hacer que mi script sea cargado de forma diferica -->
@@ -85,7 +85,7 @@
         let messages = [];
 
         // resource in https://github.com/mlc-ai/web-llm/blob/main/src/config.ts#L581
-        const SELECTED_MODEL = 'gemma-2b-it-q4f32_1-MLC'
+        const SELECTED_MODEL = 'Llama-3-8B-Instruct-q4f32_1-MLC'
 
 
         if(window.Worker) { //Usa para verificar si existe workers 
@@ -199,14 +199,6 @@
 }
 
     </script>
-
-
-
-
-
-
-
-
 </head>
 <body>
 
@@ -240,6 +232,48 @@
                         </div>
                 </div>
 
+                <div class="vistaProducto__image image__gallery">
+                    <img class="gallery__img" src="https://i0.wp.com/icenter.pe/wp-content/uploads/2021/05/macbook-pro-16-1.jpg" alt="">
+                </div>
+
+                <div class="vistaProducto__preventa">
+                        <div class="shoppingCart">
+            
+                          
+                
+            
+                            <div class="shoppingCart__precio --hr__vertical">
+                                <div class="precio__container">
+                                    <div class="precio">
+                                        <p class="precio__normal">S/. 2500.00</p>
+                                        <p class="precio__especial --red">S/. 1200.00</p>
+                                    </div>
+                                    
+                                    
+                                    <div class="preventa__cantidad">
+                                        <button class="btnIcon menos">-</button>
+                                        <input  type="text" class="input" value="1">
+                                        <button class="btnIcon mas">+</button>
+                                    </div>
+                                </div>
+            
+                                <div class="total">
+            
+                                    <p class="precio__name">Total:</p>
+                                    <p type="number" class="precio__total">S/ 1200.00</p>
+                                </div>
+                            </div>
+            
+                           
+            
+            
+                            <div class="shoppingCart__actions">
+                                <button class="btn btn--invertir btnAgregar ">Elminar</button>
+                                <button class="btn btnComprar">Ver</button>
+                            </div>
+                        </div>
+                    
+                </div>
                 
             </div>
 
